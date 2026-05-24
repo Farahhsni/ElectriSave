@@ -51,7 +51,7 @@ public class AboutActivity extends AppCompatActivity {
         });
 
         btnGithub.setOnClickListener(v -> {
-            String url = "https://github.com/yourusername/electricitybillapp";
+            String url = "https://github.com/Farahhsni/ElectriSave";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             startActivity(intent);
         });
