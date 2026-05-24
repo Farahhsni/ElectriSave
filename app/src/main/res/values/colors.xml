@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nude Chocolate Color Palette -->
+    <color name="primary">#C4A484</color>       <!-- Warm nude brown -->
+    <color name="primaryLight">#DDBFA8</color>  <!-- Light nude -->
+    <color name="primaryDark">#8B6B4A</color>   <!-- Dark chocolate -->
+
+    <color name="background">#FFF8F0</color>    <!-- Cream/Off-white -->
+    <color name="surface">#FFFFFF</color>       <!-- Pure white for cards -->
+
+    <color name="textPrimary">#2D3E50</color>   <!-- Dark navy/black -->
+    <color name="textSecondary">#5C6B7A</color> <!-- Dark gray -->
+    <color name="textHint">#A0AAB5</color>      <!-- Gray -->
+
+    <color name="accent">#D2B48C</color>        <!-- Tan/Darker nude -->
+    <color name="success">#A8C4A0</color>       <!-- Soft sage -->
+    <color name="error">#E0A4A4</color>         <!-- Soft rose -->
+
+    <color name="buttonPrimary">#C4A484</color>
+    <color name="buttonSecondary">#F5EDE4</color>
+    <color name="cardBackground">#FFFFFF</color>
+
+</resources>

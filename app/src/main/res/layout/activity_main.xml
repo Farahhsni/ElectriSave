@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="32dp"
+        android:paddingTop="60dp"
+        android:paddingBottom="40dp">
+
+        <!-- Centered Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚡"
+                android:textSize="64sp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ElectriSave"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"
+                android:letterSpacing="-0.02"
+                android:gravity="center"
+                android:fontFamily="sans-serif-light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="estimate your monthly bill"
+                android:textSize="16sp"
+                android:textColor="@color/textSecondary"
+                android:gravity="center"
+                android:fontFamily="sans-serif-light" />
+
+        </LinearLayout>
+
+        <!-- Month Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="600dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/cardBackground"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📅 SELECT MONTH"
+                    android:textSize="13sp"
+                    android:textColor="@color/textSecondary"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="16dp" />
+
+                <Spinner
+                    android:id="@+id/spinnerMonth"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@drawable/spinner_background"
+                    android:padding="16dp"
+                    android:textSize="16sp"
+                    android:popupBackground="#FFFFFF" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Unit Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="600dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/cardBackground"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔋 UNITS USED (kWh)"
+                    android:textSize="13sp"
+                    android:textColor="@color/textSecondary"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/etUnit"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:inputType="number"
+                    android:hint="Enter 1 - 1000"
+                    android:background="@drawable/edittext_background"
+                    android:padding="16dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/textPrimary"
+                    android:textColorHint="@color/textHint" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Rebate Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="600dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/cardBackground"
+            android:layout_marginBottom="28dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎁 REBATE (%)"
+                    android:textSize="13sp"
+                    android:textColor="@color/textSecondary"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/etRebate"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:inputType="numberDecimal"
+                    android:hint="Enter 0 - 5"
+                    android:background="@drawable/edittext_background"
+                    android:padding="16dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/textPrimary"
+                    android:textColorHint="@color/textHint" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Calculate Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCalculate"
+            android:layout_width="600dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:text="CALCULATE"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="32dp"
+            android:backgroundTint="@color/buttonPrimary"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Action Buttons Row -->
+        <LinearLayout
+            android:layout_width="600dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="💾 SAVE"
+                android:textSize="14sp"
+                app:cornerRadius="28dp"
+                android:backgroundTint="@color/buttonSecondary"
+                android:textColor="@color/textPrimary"
+                android:layout_marginEnd="12dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewList"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="📋 HISTORY"
+                android:textSize="14sp"
+                app:cornerRadius="28dp"
+                android:backgroundTint="@color/buttonSecondary"
+                android:textColor="@color/textPrimary"
+                android:layout_marginStart="12dp" />
+
+        </LinearLayout>
+
+        <!-- About Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAbout"
+            android:layout_width="600dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:text="ℹ️ ABOUT"
+            android:textSize="14sp"
+            app:cornerRadius="28dp"
+            android:backgroundTint="@color/buttonSecondary"
+            android:textColor="@color/textPrimary" />
+
+    </LinearLayout>
+    </ScrollView>
