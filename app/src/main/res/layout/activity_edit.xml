@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="24dp"
+        android:gravity="center_horizontal">
 
         <!-- Custom Back Button -->
         <LinearLayout
@@ -20,84 +21,84 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnBack"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:text="🔙"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                app:cornerRadius="22dp"
-                android:backgroundTint="#F5EDE4"
-                android:elevation="4dp" />
+                android:textSize="18sp"
+                app:cornerRadius="25dp"
+                android:backgroundTint="#E8D5C4"
+                android:textColor="#5C3D2E" />
 
         </LinearLayout>
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@android:color/transparent" />
-
-        <!-- Header Icon -->
+        <!-- Header Icon - CENTERED -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="✏️"
-            android:textSize="48sp"
+            android:textSize="56sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="8dp" />
 
-        <!-- Title -->
+        <!-- Title - CENTERED -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Edit Bill"
-            android:textSize="28sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/textPrimary"
-            android:letterSpacing="-0.02"
+            android:gravity="center"
+            android:layout_gravity="center"
             android:layout_marginBottom="32dp" />
 
-        <!-- Month Card -->
+        <!-- Month Card - CENTERED -->
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             app:cardCornerRadius="20dp"
-            app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/surface"
-            android:layout_marginBottom="16dp">
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/cardBackground"
+            android:layout_marginBottom="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="24dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="📅 SELECT MONTH"
-                    android:textSize="11sp"
-                    android:textColor="#2D3E50"
-                    android:textColorHint="#A78B71"
-                    android:letterSpacing="0.08"
-                    android:layout_marginBottom="12dp" />
+                    android:textSize="13sp"
+                    android:textColor="@color/textSecondary"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="16dp" />
 
                 <Spinner
                     android:id="@+id/spinnerMonth"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="80dp"
                     android:background="@drawable/spinner_background"
-                    android:padding="12dp" />
+                    android:padding="16dp"
+                    android:textSize="16sp"
+                    android:popupBackground="#FFFFFF" />
 
             </LinearLayout>
+
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Unit Card -->
+        <!-- Unit Card - CENTERED -->
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="2dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="3dp"
             app:cardBackgroundColor="@color/surface"
             android:layout_marginBottom="16dp">
 
@@ -105,37 +106,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="20dp"
+                android:gravity="center">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="🔋 UNITS USED (kWh)"
-                    android:textSize="11sp"
-                    android:textColor="@color/textSecondary"
-                    android:letterSpacing="0.08"
-                    android:layout_marginBottom="12dp" />
+                    android:textSize="13sp"
+                    android:textColor="#A78B71"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center" />
 
                 <EditText
                     android:id="@+id/etUnit"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="55dp"
                     android:inputType="number"
                     android:hint="Enter 1 - 1000"
                     android:background="@drawable/edittext_background"
                     android:padding="12dp"
-                    android:textColor="@color/textPrimary"
-                    android:textColorHint="@color/textHint" />
+                    android:textSize="16sp"
+                    android:textColor="#2D3E50"
+                    android:textColorHint="#A78B71"
+                    android:gravity="center" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Rebate Card -->
+        <!-- Rebate Card - CENTERED -->
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="2dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="3dp"
             app:cardBackgroundColor="@color/surface"
             android:layout_marginBottom="24dp">
 
@@ -143,38 +149,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="20dp"
+                android:gravity="center">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="🎁 REBATE (%)"
-                    android:textSize="11sp"
-                    android:textColor="@color/textSecondary"
-                    android:letterSpacing="0.08"
-                    android:layout_marginBottom="12dp" />
+                    android:textSize="13sp"
+                    android:textColor="#A78B71"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center" />
 
                 <EditText
                     android:id="@+id/etRebate"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="55dp"
                     android:inputType="numberDecimal"
                     android:hint="Enter 0 - 5"
                     android:background="@drawable/edittext_background"
                     android:padding="12dp"
-                    android:textColor="@color/textPrimary"
-                    android:textColorHint="@color/textHint" />
+                    android:textSize="16sp"
+                    android:textColor="#2D3E50"
+                    android:textColorHint="#A78B71"
+                    android:gravity="center" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Results Card -->
+        <!-- Results Card - CENTERED -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/resultCard"
-            android:layout_width="match_parent"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="2dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="3dp"
             android:visibility="visible"
             app:cardBackgroundColor="#E8F4F8"
             android:layout_marginBottom="32dp">
@@ -183,37 +194,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
+                android:padding="20dp"
+                android:gravity="center">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CURRENT CALCULATION"
-                    android:textSize="11sp"
-                    android:textColor="@color/primaryDark"
+                    android:text="💰 CURRENT CALCULATION"
+                    android:textSize="12sp"
+                    android:textColor="#5C3D2E"
                     android:letterSpacing="0.1"
-                    android:layout_marginBottom="16dp" />
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Total Charges"
                     android:textSize="13sp"
-                    android:textColor="@color/textSecondary" />
+                    android:textColor="#A78B71"
+                    android:gravity="center" />
 
                 <TextView
                     android:id="@+id/tvTotalCharges"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="@color/textPrimary"
-                    android:layout_marginBottom="12dp" />
+                    android:textColor="#2D3E50"
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center" />
 
                 <View
-                    android:layout_width="match_parent"
+                    android:layout_width="60dp"
                     android:layout_height="1dp"
-                    android:background="@color/primaryLight"
+                    android:background="#DDBFA8"
                     android:layout_marginVertical="12dp" />
 
                 <TextView
@@ -221,7 +236,8 @@
                     android:layout_height="wrap_content"
                     android:text="After Rebate"
                     android:textSize="13sp"
-                    android:textColor="@color/textSecondary" />
+                    android:textColor="#A78B71"
+                    android:gravity="center" />
 
                 <TextView
                     android:id="@+id/tvFinalCost"
@@ -229,41 +245,42 @@
                     android:layout_height="wrap_content"
                     android:textSize="28sp"
                     android:textStyle="bold"
-                    android:textColor="@color/primary" />
+                    android:textColor="#C4A484"
+                    android:gravity="center" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Buttons Row -->
+        <!-- Buttons Row - CENTERED -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_gravity="center">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnUpdate"
-                android:layout_width="0dp"
-                android:layout_height="56dp"
-                android:layout_weight="1"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
                 android:text="UPDATE"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:cornerRadius="28dp"
-                android:backgroundTint="@color/primary"
-                android:layout_marginEnd="8dp" />
+                app:cornerRadius="25dp"
+                android:backgroundTint="#7EB09E"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="12dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCancel"
-                android:layout_width="0dp"
-                android:layout_height="56dp"
-                android:layout_weight="1"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
                 android:text="CANCEL"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:cornerRadius="28dp"
-                android:backgroundTint="@color/error"
-                android:textColor="@color/surface"
-                android:layout_marginStart="8dp" />
+                app:cornerRadius="25dp"
+                android:backgroundTint="#E0A4A4"
+                android:textColor="#FFFFFF"
+                android:layout_marginStart="12dp" />
 
         </LinearLayout>
 

@@ -3,11 +3,9 @@ package com.example.electricitybillapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.card.MaterialCardView;
 import java.text.DecimalFormat;
 import android.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -17,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private DataHelper dbHelper;
     private Spinner spinnerMonth;
     private EditText etUnit, etRebate;
-    private MaterialButton btnCalculate, btnSave, btnViewList, btnAbout;
+    private MaterialButton btnCalculate, btnViewList, btnAbout;  // REMOVED btnSave
     private DecimalFormat df = new DecimalFormat("#0.00");
 
     @Override
@@ -32,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         etUnit = findViewById(R.id.etUnit);
         etRebate = findViewById(R.id.etRebate);
         btnCalculate = findViewById(R.id.btnCalculate);
-        btnSave = findViewById(R.id.btnSave);
         btnViewList = findViewById(R.id.btnViewList);
         btnAbout = findViewById(R.id.btnAbout);
 
@@ -50,9 +47,6 @@ public class MainActivity extends AppCompatActivity {
         // Calculate button
         btnCalculate.setOnClickListener(v -> calculateBill());
 
-        // Save button
-        btnSave.setOnClickListener(v -> saveToDatabase());
-
         // View List button
         btnViewList.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, DetailActivity.class);
@@ -68,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void calculateBill() {
         String selectedMonth = spinnerMonth.getSelectedItem().toString();
-        if (selectedMonth.equals("Please select month") || spinnerMonth.getSelectedItemPosition() == 0) {
+        if (selectedMonth.equals("📅 Please select month") || spinnerMonth.getSelectedItemPosition() == 0) {
             showErrorDialog("Please select a month first!");
             return;
         }
@@ -103,15 +97,17 @@ public class MainActivity extends AppCompatActivity {
         showResultPopup(totalCharges, finalCost);
     }
 
-    // Add this new method for popup results
     private void showResultPopup(double totalCharges, double finalCost) {
-        // Create custom dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_result, null);
 
         TextView tvPopupTotal = dialogView.findViewById(R.id.tvPopupTotal);
         TextView tvPopupFinal = dialogView.findViewById(R.id.tvPopupFinal);
-        Button btnClose = dialogView.findViewById(R.id.btnClose);
+        MaterialButton btnSaveFromDialog = dialogView.findViewById(R.id.btnSaveFromDialog);
+        MaterialButton btnCloseDialog = dialogView.findViewById(R.id.btnCloseDialog);
+
+        final double finalTotal = totalCharges;
+        final double finalFinalCost = finalCost;
 
         tvPopupTotal.setText("RM " + df.format(totalCharges));
         tvPopupFinal.setText("RM " + df.format(finalCost));
@@ -120,12 +116,47 @@ public class MainActivity extends AppCompatActivity {
         builder.setCancelable(false);
 
         AlertDialog dialog = builder.create();
+
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        }
+
         dialog.show();
 
-        btnClose.setOnClickListener(v -> dialog.dismiss());
+        btnSaveFromDialog.setOnClickListener(v -> {
+            String month = spinnerMonth.getSelectedItem().toString();
+            if (month.equals("📅 Please select month") || spinnerMonth.getSelectedItemPosition() == 0) {
+                Toast.makeText(this, "Please select a month first!", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+                return;
+            }
+
+            String unitStr = etUnit.getText().toString().trim();
+            String rebateStr = etRebate.getText().toString().trim();
+
+            if (unitStr.isEmpty()) {
+                Toast.makeText(this, "Please calculate first!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            int unit = Integer.parseInt(unitStr);
+            double rebate = rebateStr.isEmpty() ? 0 : Double.parseDouble(rebateStr);
+
+            long result = dbHelper.insertBill(month, unit, finalTotal, rebate, finalFinalCost);
+
+            if (result != -1) {
+                Toast.makeText(this, "✓ Data saved successfully!", Toast.LENGTH_SHORT).show();
+                etUnit.setText("");
+                etRebate.setText("");
+                dialog.dismiss();
+            } else {
+                Toast.makeText(this, "Failed to save data", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnCloseDialog.setOnClickListener(v -> dialog.dismiss());
     }
 
-    // Add this new method for error dialog
     private void showErrorDialog(String message) {
         new AlertDialog.Builder(this)
                 .setTitle("⚠️ Oops!")
@@ -157,55 +188,5 @@ public class MainActivity extends AppCompatActivity {
             total += remaining * 0.546;
         }
         return total;
-    }
-
-    private void saveToDatabase() {
-        String month = spinnerMonth.getSelectedItem().toString();
-        // Check if hint is selected (not a real month)
-        if (month.equals("Please select month") || spinnerMonth.getSelectedItemPosition() == 0) {
-            showErrorDialog("Please select a month first!");
-            return;
-        }
-        String unitStr = etUnit.getText().toString().trim();
-        String rebateStr = etRebate.getText().toString().trim();
-
-        // Check if unit is empty
-        if (unitStr.isEmpty()) {
-            showErrorDialog("Please calculate first!");
-            return;
-        }
-
-        int unit = Integer.parseInt(unitStr);
-
-        // Validate unit range
-        if (unit < 1 || unit > 1000) {
-            showErrorDialog("Unit must be between 1-1000 kWh");
-            return;
-        }
-
-        double rebate = 0;
-        if (!rebateStr.isEmpty()) {
-            rebate = Double.parseDouble(rebateStr);
-            if (rebate < 0 || rebate > 5) {
-                showErrorDialog("Rebate must be between 0-5%");
-                return;
-            }
-        }
-
-        // Calculate charges
-        double totalCharges = calculateTotalCharges(unit);
-        double finalCost = totalCharges - (totalCharges * rebate / 100);
-
-        // Save to database
-        long result = dbHelper.insertBill(month, unit, totalCharges, rebate, finalCost);
-
-        if (result != -1) {
-            Toast.makeText(this, "✓ Data saved successfully!", Toast.LENGTH_SHORT).show();
-            // Clear fields
-            etUnit.setText("");
-            etRebate.setText("");
-        } else {
-            Toast.makeText(this, "Failed to save data", Toast.LENGTH_SHORT).show();
-        }
     }
 }

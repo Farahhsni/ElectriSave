@@ -28,14 +28,6 @@
 
     </LinearLayout>
 
-    <!-- Toolbar -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/transparent"
-        app:navigationIcon="?attr/homeAsUpIndicator"
-        app:title="" />
 
     <!-- Centered Icon -->
     <TextView

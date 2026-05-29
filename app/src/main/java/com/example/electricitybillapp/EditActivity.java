@@ -11,6 +11,7 @@ import java.text.DecimalFormat;
 import android.view.MenuItem;
 import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.button.MaterialButton;
+import com.example.electricitybillapp.CustomSpinnerAdapter;
 
 public class EditActivity extends AppCompatActivity {
 
@@ -56,7 +57,9 @@ public class EditActivity extends AppCompatActivity {
         // Setup months
         String[] months = {"January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, months);
+
+        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(this, R.layout.spinner_item, months);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         spinnerMonth.setAdapter(adapter);
 
         // Load existing bill data
@@ -69,8 +72,6 @@ public class EditActivity extends AppCompatActivity {
         btnCancel.setOnClickListener(v -> finish());
     }
 
-    public void setSupportActionBar(Toolbar toolbar) {
-    }
 
     private void loadBillData() {
         Cursor cursor = dbHelper.getBillById(billId);

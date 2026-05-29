@@ -4,80 +4,148 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@drawable/dialog_background"
-    android:padding="24dp">
+    android:padding="16dp"
+    android:background="@android:color/transparent">
 
-    <!-- Cute Icon -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="🎉"
-        android:textSize="48sp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_marginBottom="12dp" />
-
-    <!-- Title -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Your Bill Estimate"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/textPrimary"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:layout_marginBottom="24dp" />
-
-    <!-- Divider -->
-    <View
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/primaryLight"
-        android:layout_marginBottom="20dp" />
-
-    <!-- Total Charges -->
-    <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total Charges"
-        android:textSize="14sp"
-        android:textColor="@color/textSecondary" />
+        app:cardCornerRadius="28dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#FFF5EE"
+        android:padding="20dp">
 
-    <TextView
-        android:id="@+id/tvPopupTotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="@color/textPrimary"
-        android:layout_marginBottom="16dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
 
-    <!-- Final Cost -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="After Rebate"
-        android:textSize="14sp"
-        android:textColor="@color/textSecondary" />
+            <!-- Icon -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎉"
+                android:textSize="48sp"
+                android:layout_marginBottom="8dp" />
 
-    <TextView
-        android:id="@+id/tvPopupFinal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        android:textColor="@color/primary"
-        android:layout_marginBottom="24dp" />
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Bill Estimate"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#C4A484"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="16dp" />
 
-    <!-- Close Button -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnClose"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="CLOSE"
-        android:textSize="14sp"
-        app:cornerRadius="25dp"
-        android:backgroundTint="@color/buttonPrimary" />
+            <!-- Divider -->
+            <View
+                android:layout_width="50dp"
+                android:layout_height="2dp"
+                android:background="#C4A484"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Total Charges - Centered -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Charges"
+                    android:textSize="13sp"
+                    android:textColor="#A78B71"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tvPopupTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RM 0.00"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#5C3D2E" />
+
+            </LinearLayout>
+
+            <!-- Final Cost - Centered -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="After Rebate"
+                    android:textSize="13sp"
+                    android:textColor="#A78B71"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tvPopupFinal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RM 0.00"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="#C4A484" />
+
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E8D5C4"
+                android:layout_marginVertical="12dp" />
+
+            <!-- Buttons Row: SAVE and CLOSE -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="8dp">
+
+                <!-- SAVE Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveFromDialog"
+                    android:layout_width="100dp"
+                    android:layout_height="44dp"
+                    android:text="💾 SAVE"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="22dp"
+                    android:backgroundTint="#7EB09E"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- CLOSE Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCloseDialog"
+                    android:layout_width="100dp"
+                    android:layout_height="44dp"
+                    android:text="CLOSE"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="22dp"
+                    android:backgroundTint="#C4A484"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

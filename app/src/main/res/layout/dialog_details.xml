@@ -192,7 +192,7 @@
 
             </LinearLayout>
 
-            <!-- Button Row: Delete and Close side by side -->
+            <!-- Buttons Row: EDIT, DELETE, CLOSE -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -200,29 +200,43 @@
                 android:gravity="center"
                 android:layout_marginTop="8dp">
 
-                <!-- Delete Button (Bin Emoji) -->
+                <!-- EDIT Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEditDetail"
+                    android:layout_width="80dp"
+                    android:layout_height="44dp"
+                    android:text="✏️ EDIT"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="22dp"
+                    android:backgroundTint="#E8B86B"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginEnd="8dp" />
+
+                <!-- DELETE Button -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnDeleteDetail"
-                    android:layout_width="60dp"
-                    android:layout_height="44dp"
-                    android:text="🗑️"
-                    android:textSize="18sp"
-                    app:cornerRadius="22dp"
-                    android:backgroundTint="#E8D5C4"
-                    android:layout_marginEnd="12dp"
-                    android:layout_marginBottom="10dp"/>
-
-                <!-- Close Button -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnCloseDetail"
                     android:layout_width="100dp"
                     android:layout_height="44dp"
+                    android:text="🗑️ DELETE"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="22dp"
+                    android:backgroundTint="#E0A4A4"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginEnd="8dp" />
+
+                <!-- CLOSE Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCloseDetail"
+                    android:layout_width="80dp"
+                    android:layout_height="44dp"
                     android:text="CLOSE"
-                    android:textSize="13sp"
+                    android:textSize="12sp"
                     android:textStyle="bold"
                     app:cornerRadius="22dp"
                     android:backgroundTint="#C4A484"
-                    android:layout_marginBottom="10dp"/>
+                    android:textColor="#FFFFFF" />
 
             </LinearLayout>
 

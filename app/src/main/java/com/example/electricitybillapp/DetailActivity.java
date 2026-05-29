@@ -1,6 +1,7 @@
 package com.example.electricitybillapp;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -100,6 +101,9 @@ public class DetailActivity extends AppCompatActivity {
             double rebate = cursor.getDouble(cursor.getColumnIndexOrThrow(DataHelper.COLUMN_REBATE));
             double finalCost = cursor.getDouble(cursor.getColumnIndexOrThrow(DataHelper.COLUMN_FINAL));
 
+            // Store billId for edit and delete
+            final int currentBillId = billId;
+
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_details, null);
 
@@ -108,8 +112,9 @@ public class DetailActivity extends AppCompatActivity {
             TextView tvTotal = dialogView.findViewById(R.id.detailTotal);
             TextView tvRebate = dialogView.findViewById(R.id.detailRebate);
             TextView tvFinal = dialogView.findViewById(R.id.detailFinal);
-            MaterialButton btnClose = dialogView.findViewById(R.id.btnCloseDetail);
+            MaterialButton btnEdit = dialogView.findViewById(R.id.btnEditDetail);
             MaterialButton btnDelete = dialogView.findViewById(R.id.btnDeleteDetail);
+            MaterialButton btnClose = dialogView.findViewById(R.id.btnCloseDetail);
 
             tvMonth.setText(month);
             tvUnit.setText(unit + " kWh");
@@ -128,21 +133,28 @@ public class DetailActivity extends AppCompatActivity {
 
             AlertDialog dialog = builder.create();
 
-            // Make background transparent
             if (dialog.getWindow() != null) {
                 dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
             }
 
             dialog.show();
 
-            // Close button
-            btnClose.setOnClickListener(v -> dialog.dismiss());
+            // EDIT Button
+            btnEdit.setOnClickListener(v -> {
+                dialog.dismiss();
+                Intent intent = new Intent(DetailActivity.this, EditActivity.class);
+                intent.putExtra("bill_id", currentBillId);
+                startActivity(intent);
+            });
 
-            // Delete button
+            // DELETE Button
             btnDelete.setOnClickListener(v -> {
                 dialog.dismiss();
-                confirmDelete(billId);
+                confirmDelete(currentBillId);
             });
+
+            // CLOSE Button
+            btnClose.setOnClickListener(v -> dialog.dismiss());
         }
         cursor.close();
     }
