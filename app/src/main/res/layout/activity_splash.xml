@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:cardCornerRadius="25dp"
+    android:gravity="center"
+    android:background="#FFFFFF"
+    android:padding="24dp">
+
+    <!-- Logo Image at Top -->
+    <ImageView
+        android:id="@+id/ivSplashLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:cardCornerRadius="25dp"
+        android:src="@drawable/app_logo"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp" />
+
+    <!-- App Name -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ElectriSave"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="#3D2B1F"
+        android:letterSpacing="-0.02"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Tagline / Subtitle -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smart Electricity Bill Estimator"
+        android:textSize="16sp"
+        android:textColor="#8B7355"
+        android:layout_marginBottom="80dp" />
+
+    <!-- Loading Progress Bar -->
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:indeterminateTint="#8B6B4A" />
+
+    <!-- Copyright at Bottom -->
+    <TextView
+        android:id="@+id/tvCopyrightSplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="© 2026 Farah Sabrena Binti Hasni"
+        android:textSize="12sp"
+        android:textColor="#B8A28A"
+        android:layout_marginTop="100dp" />
+
+</LinearLayout>

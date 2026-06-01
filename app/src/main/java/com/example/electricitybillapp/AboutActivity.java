@@ -22,12 +22,6 @@ public class AboutActivity extends AppCompatActivity {
         MaterialButton btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(v -> finish());
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
-        }
 
         ImageView ivStudentPicture = findViewById(R.id.ivStudentPicture);
         ivStudentPicture.setImageResource(R.drawable.student_photo);
@@ -43,7 +37,7 @@ public class AboutActivity extends AppCompatActivity {
         tvStudentName.setText("Name: FARAH SABRENA BINTI HASNI");
         tvStudentId.setText("Student ID: 2024907767");
         tvCourse.setText("Course: ICT602 - Mobile Technology and Development");
-
+        tvCopyright.setText("© 2026 Farah Sabrena Binti Hasni. All rights reserved.");
 
         btnHowToUse.setOnClickListener(v -> {
             Intent intent = new Intent(AboutActivity.this, HowToUseActivity.class);

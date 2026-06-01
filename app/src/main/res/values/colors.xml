@@ -23,4 +23,7 @@
     <color name="accent">#D4B896</color>
     <color name="success">#7EB09E</color>
     <color name="error">#E0A4A4</color>
+
+    <!-- White -->
+    <color name="white">#FFFFFF</color>
 </resources>

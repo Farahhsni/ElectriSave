@@ -2,4 +2,6 @@
 <resources>
     <item name="btnSaveFromDialog" type="id" />
     <item name="btnCloseDialog" type="id" />
+    <item name="toolbar" type="id" />
+    <item name="tvCopyrightSplash" type="id" />
 </resources>
