@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ElectricityBillApp">
 
+        <!-- SPLASH ACTIVITY - THIS IS THE LAUNCHER -->
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -22,8 +23,10 @@
             </intent-filter>
         </activity>
 
+        <!-- MAIN ACTIVITY -->
         <activity android:name=".MainActivity" />
 
+        <!-- OTHER ACTIVITIES -->
         <activity android:name=".DetailActivity" />
         <activity android:name=".EditActivity" />
         <activity android:name=".AboutActivity" />

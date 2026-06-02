@@ -4,19 +4,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    app:cardCornerRadius="25dp"
     android:gravity="center"
     android:background="#FFFFFF"
     android:padding="24dp">
 
-    <!-- Logo Image at Top -->
-    <ImageView
-        android:id="@+id/ivSplashLogo"
+    <!-- Text Logo (⚡) - No Image File Needed -->
+    <LinearLayout
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/app_logo"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:layout_marginTop="60dp"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="20dp"
+        android:elevation="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚡"
+            android:textSize="80sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center" />
+
+    </LinearLayout>
 
     <!-- App Name -->
     <TextView
