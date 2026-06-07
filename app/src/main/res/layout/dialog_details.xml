@@ -204,7 +204,7 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnEditDetail"
                     android:layout_width="80dp"
-                    android:layout_height="44dp"
+                    android:layout_height="50dp"
                     android:text="✏️ EDIT"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -217,7 +217,7 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnDeleteDetail"
                     android:layout_width="100dp"
-                    android:layout_height="44dp"
+                    android:layout_height="50dp"
                     android:text="🗑️ DELETE"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -230,7 +230,7 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnCloseDetail"
                     android:layout_width="80dp"
-                    android:layout_height="44dp"
+                    android:layout_height="50dp"
                     android:text="CLOSE"
                     android:textSize="12sp"
                     android:textStyle="bold"

@@ -54,7 +54,9 @@
 
         <!-- Month Card -->
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="400dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:cardCornerRadius="20dp"
@@ -91,8 +93,9 @@
 
         <!-- Unit Card -->
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"            android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:cardCornerRadius="20dp"
             app:cardElevation="4dp"
@@ -131,8 +134,9 @@
 
         <!-- Rebate Card -->
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"            android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:cardCornerRadius="20dp"
             app:cardElevation="4dp"
@@ -172,8 +176,9 @@
         <!-- Calculate Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCalculate"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"            android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:cardCornerRadius="20dp"
             android:text="CALCULATE"
@@ -185,8 +190,9 @@
         <!-- Action Buttons Row -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnViewList"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"            android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:cardCornerRadius="20dp"
             android:text="📋 HISTORY"
@@ -198,8 +204,9 @@
         <!-- About Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAbout"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"            android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:cardCornerRadius="20dp"
             android:text="ℹ️ ABOUT"

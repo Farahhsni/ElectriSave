@@ -65,7 +65,9 @@
 
             <!-- Step 1 Box -->
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="400dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 app:cardCornerRadius="20dp"
@@ -104,7 +106,9 @@
 
             <!-- Step 2 Box -->
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="400dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 app:cardCornerRadius="20dp"
@@ -143,7 +147,9 @@
 
             <!-- Step 3 Box -->
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="400dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 app:cardCornerRadius="20dp"
@@ -182,7 +188,9 @@
 
             <!-- Step 4 Box -->
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="400dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 app:cardCornerRadius="20dp"
@@ -221,7 +229,9 @@
 
             <!-- Step 5 Box -->
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="400dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 app:cardCornerRadius="20dp"
@@ -260,7 +270,9 @@
 
             <!-- Step 6 Box -->
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="400dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 app:cardCornerRadius="20dp"
@@ -299,7 +311,9 @@
 
             <!-- Electricity Rates Box -->
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="400dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 app:cardCornerRadius="20dp"
@@ -338,7 +352,9 @@
 
             <!-- Tips Box -->
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="400dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 app:cardCornerRadius="20dp"

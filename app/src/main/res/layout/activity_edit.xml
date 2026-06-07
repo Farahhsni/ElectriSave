@@ -56,8 +56,9 @@
 
         <!-- Month Card - CENTERED -->
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"            android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:cardCornerRadius="20dp"
             app:cardElevation="4dp"
@@ -94,8 +95,9 @@
 
         <!-- Unit Card - CENTERED -->
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"            android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:cardCornerRadius="24dp"
             app:cardElevation="3dp"
@@ -137,8 +139,9 @@
 
         <!-- Rebate Card - CENTERED -->
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"            android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:cardCornerRadius="24dp"
             app:cardElevation="3dp"
@@ -181,8 +184,9 @@
         <!-- Results Card - CENTERED -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/resultCard"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"            android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:cardCornerRadius="24dp"
             app:cardElevation="3dp"

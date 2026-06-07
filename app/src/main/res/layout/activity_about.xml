@@ -81,8 +81,9 @@ android:background="@color/background">
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="400dp"
-        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"        android:layout_height="200dp"
         android:layout_gravity="center"
         app:cardCornerRadius="24dp"
         app:cardElevation="3dp"
@@ -138,8 +139,9 @@ android:background="@color/background">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnHowToUse"
-        android:layout_width="400dp"
-        android:layout_height="70dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"        android:layout_height="70dp"
         android:layout_gravity="center"
         android:text="📖 HOW TO USE"
         android:textSize="16sp"
@@ -150,8 +152,9 @@ android:background="@color/background">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnGithub"
-        android:layout_width="400dp"
-        android:layout_height="70dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"        android:layout_height="70dp"
         android:layout_gravity="center"
         android:text="📂 VIEW ON GITHUB"
         android:textSize="16sp"
